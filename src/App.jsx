@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import Login from "./auth/Login";
-import Signup from "./auth/signUp";
+import Signup from "./auth/SignUp";
 import ForgotPassword from "./auth/ForgotPassword";
 import ResetPassword from "./auth/ResetPassword";
 import Role from "./auth/Role";
