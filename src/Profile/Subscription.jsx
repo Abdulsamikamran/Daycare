@@ -1,5 +1,4 @@
-import Button from "@/components/Button";
-import Input from "@/components/input";
+import Button from "@/components/button";
 import React, { useState } from "react";
 
 const Subscription = () => {
