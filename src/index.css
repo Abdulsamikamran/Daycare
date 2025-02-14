@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --background-color: #f5f6ff;
+  }
+  body {
+    @apply bg-[--background-color];
+  }
+}
+@layer utilities {
+  input[type="number"] {
+    appearance: none; /* Standard property */
+    -webkit-appearance: none; /* Chrome, Safari, Edge */
+    -moz-appearance: textfield; /* Firefox */
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
