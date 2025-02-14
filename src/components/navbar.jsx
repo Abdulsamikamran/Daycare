@@ -48,7 +48,7 @@ export default function Navbar({ search, profile }) {
                     key={index}
                     to={path}
                     className={`text-black-medium text-[18px] hover:text-gray-900 transition-colors ${
-                      location.pathname.startsWith(path)
+                      location.pathname === path
                         ? "font-bold text-theme2-dark"
                         : "font-medium"
                     }`}
@@ -71,7 +71,7 @@ export default function Navbar({ search, profile }) {
 
                 {/* Dropdown Menu */}
                 {showMenu && (
-                  <div className="absolute top-full right-0  w-[150px] bg-white shadow-lg rounded-lg border border-gray-200">
+                  <div className="absolute top-full right-0 z-50 w-[150px] bg-white shadow-lg rounded-lg border border-gray-200">
                     <ul className="py-2">
                       <li
                         className="px-4 py-2 hover:bg-gray-100 cursor-pointer"

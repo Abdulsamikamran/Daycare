@@ -202,7 +202,7 @@ checked:after:opacity-100 checked:after:left-[5px] checked:after:top-[1px]"
               icon="/icons/search-green.svg"
               options={[{ value: "Assistant", label: "Assistant" }]}
             />
-            <Button variant="primarySmall" className="whitespace-nowrap px-10">
+            <Button variant="primarySmall" className="whitespace-nowrap px-16">
               Search
             </Button>
           </div>

@@ -2,14 +2,14 @@ import React from "react";
 
 const Hero2 = ({ variant }) => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="relative">
         <img
           className="w-full h-[510px] z-10"
           src="/assets/hero-bg1.png"
           alt=""
         />
-        <div className="absolute top-0 w-full gap-7 h-full -mt-10 flex flex-col justify-center items-center text-center">
+        <div className="absolute top-0 w-full gap-7 h-full pb-20 flex flex-col justify-center items-center text-center">
           {/* Text container with higher z-index */}
           <div className="relative z-50">
             <h3

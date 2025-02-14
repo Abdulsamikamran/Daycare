@@ -14,13 +14,15 @@ const Newsletter = () => {
           Subscribe today and be the first to know what’s happening in the
           community!
         </p>
-        <div className="flex gap-2 items-center">
-          <Input
-            className={" w-[556px] h-[58px]"}
-            type="email"
-            placeholder="example@domain.com"
-            icon={"/icons/email.svg"}
-          />
+        <div className="flex w-full justify-center gap-2 items-center">
+          <div className="w-[556px]">
+            <Input
+              className={"  h-[58px]"}
+              type="email"
+              placeholder="example@domain.com"
+              icon={"/icons/email.svg"}
+            />
+          </div>
           <Button variant="primarySmallBlue" className="">
             Subscribe
           </Button>

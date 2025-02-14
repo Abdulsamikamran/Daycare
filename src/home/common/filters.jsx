@@ -21,7 +21,7 @@ const Filters = ({ variant }) => {
             icon="/icons/search-green.svg"
             options={[{ value: "Infants", label: "Infants" }]}
           />
-          <Button variant="primarySmall" className="whitespace-nowrap px-10">
+          <Button variant="primarySmall" className="whitespace-nowrap px-16">
             Search
           </Button>
         </div>
@@ -45,7 +45,7 @@ const Filters = ({ variant }) => {
             icon="/icons/search-green.svg"
             options={[{ value: "Assistant", label: "Assistant" }]}
           />
-          <Button variant="primarySmall" className="whitespace-nowrap px-10">
+          <Button variant="primarySmall" className=" px-16">
             Search
           </Button>
         </div>

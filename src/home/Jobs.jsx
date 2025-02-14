@@ -18,7 +18,7 @@ const Jobs = () => {
       <Filters />
       <div className="container space-y-6 mx-auto my-20">
         <h2 className="text-[36px] font-bold font-sour">Featured Jobs</h2>
-        <div className="flex justify-between w-full">
+        <div className="flex justify-between gap-6 w-full">
           <Card3 onClick={handleNavigate} hover />
           <Card3 onClick={handleNavigate} hover />
           <Card3 onClick={handleNavigate} hover />
