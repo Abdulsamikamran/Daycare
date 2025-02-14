@@ -9,7 +9,7 @@ export default function FormStep({
   onSkip,
 }) {
   return (
-    <div className="w-full ">
+    <div className="w-full mb-8 ">
       <h2 className="font-bold font-sour text-[36px]">{heading}</h2>
       <div className="">
         {description && (
