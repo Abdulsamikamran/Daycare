@@ -7,9 +7,11 @@ const Terms = () => {
   const languages = ["english", "french", "german", "italian"];
 
   return (
-    <div className="bg-white border p-6 rounded-2xl border-gray-200">
-      <p className="font-bold text-[28px] font-sour">Terms and Conditions</p>
-      <div className="border-t border-border w-full my-6" />
+    <div className="bg-white border xs:p-4 md:p-4 xl:p-6 rounded-2xl border-gray-200">
+      <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-sour">
+        Terms and Conditions
+      </p>
+      <div className="border-t border-border w-full my-3" />
 
       <div className=" text-black-medium space-y-6">
         <p>

@@ -41,11 +41,13 @@ const Subscription = () => {
     }
   };
   return (
-    <div className="bg-white border p-6 rounded-2xl border-gray-200">
-      <p className="font-bold text-[28px] font-sour">Subscription Plan</p>
-      <div className="border-t border-border w-full my-6" />
+    <div className="bg-white border xs:p-4 md:p-4 xl:p-6 rounded-2xl border-gray-200">
+      <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-sour">
+        Subscription Plan
+      </p>
+      <div className="border-t border-border w-full my-3" />
 
-      <div className="space-y-10 relative">
+      <div className="space-y-10 mt-10 relative">
         {plans.map((plan) => (
           <div
             key={plan.id}

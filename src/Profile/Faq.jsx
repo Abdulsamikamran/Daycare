@@ -27,12 +27,12 @@ const faqData = [
 const AccordionItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div
-      className={`mb-2 rounded-lg max-w-full my-8 overflow-hidden bg-white ${
-        isOpen ? " border-2 border-theme2-medium" : " border-none"
+      className={`mb-2 rounded-lg overflow-hidden bg-white transition-all duration-200 ${
+        isOpen ? "border-2 border-theme2-medium" : "border-none"
       }`}
     >
       <button
-        className={`w-full px-6 py-4 text-left flex items-center gap-4 transition-colors duration-200 ${
+        className={`w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center gap-4 transition-colors duration-200 ${
           isOpen
             ? "bg-theme2-medium border-2 border-theme2-medium"
             : "bg-transparent border-none"
@@ -40,19 +40,21 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
         onClick={onClick}
         aria-expanded={isOpen}
       >
-        <span className="text-[#4a7834] font-semibold text-[20px]">
+        <span className="text-[#4a7834] font-semibold text-lg sm:text-xl">
           {isOpen ? "−" : "+"}
         </span>
-        <span className="font-semibold text-[20px]">{question}</span>
+        <span className="font-semibold text-sm  lg:text-lg">{question}</span>
       </button>
 
       <div
-        className={`overflow-hidden transition-all duration-200 ease-in-out bg-white ${
-          isOpen ? "max-h-[106px]" : "max-h-0"
+        className={`overflow-hidden transition-all duration-300 ease-in-out bg-white ${
+          isOpen ? "max-h-auto py-2 sm:py-4" : "max-h-0"
         }`}
       >
-        <div className="px-12 py-4">
-          <p className="text-gray-600 font-medium text-[18px]">{answer}</p>
+        <div className="px-6 sm:px-12">
+          <p className="text-gray-600 font-medium text-xs  md:text-base">
+            {answer}
+          </p>
         </div>
       </div>
     </div>
@@ -66,13 +68,13 @@ const Faq = () => {
     setOpenIndex(index === openIndex ? null : index);
   };
   return (
-    <div className="bg-white border p-6 rounded-2xl border-gray-200">
-      <p className="font-bold text-[28px] font-sour">
+    <div className="bg-white border xs:p-4 md:p-4 xl:p-6 rounded-2xl border-gray-200">
+      <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-sour">
         Frequently Asked Questions
       </p>
-      <div className="border-t border-border w-full my-6" />
+      <div className="border-t border-border w-full my-3" />
 
-      <div>
+      <div className="w-full ">
         {faqData.map((faq, index) => (
           <AccordionItem
             key={index}

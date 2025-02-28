@@ -5,6 +5,8 @@ import Filters from "./common/filters";
 import DaycareCarousel from "./common/daycare-carousel";
 import Card2 from "@/components/card2";
 import { useNavigate } from "react-router-dom";
+import Newsletter from "./common/newsletter";
+import Faq from "./common/faq";
 
 const daycareData = [
   {
@@ -62,18 +64,20 @@ const Centers = () => {
       <div className="my-20">
         <DaycareCarousel onClick={handleNavigate} variant={"variant2"} />
       </div>
-      <div className="bg-white w-full py-10">
+      <div className="bg-white container mx-auto px-6 w-full py-10">
         <div className="container space-y-6 mx-auto  ">
-          <h2 className="text-[36px] font-bold font-sour">
+          <h2 className="xs:text-[20px] md:text-[36px] font-bold font-sour">
             All Daycare Centers{" "}
           </h2>
-          <div className="grid grid-cols-3 gap-4 w-full">
+          <div className="grid xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
             {daycareData.map((daycare, index) => (
               <Card2 {...daycare} />
             ))}
           </div>
         </div>
       </div>
+      <Faq />
+      <Newsletter />
     </Layout>
   );
 };

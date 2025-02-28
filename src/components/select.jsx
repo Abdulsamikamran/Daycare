@@ -13,7 +13,7 @@ const Select = ({
   return (
     <div className={className}>
       {label && (
-        <label className="block text-[18px] font-semibold text-black-dark">
+        <label className="block  xs:text-[16px] md:text-[18px] font-semibold text-black-dark">
           {label}
         </label>
       )}
@@ -25,7 +25,7 @@ const Select = ({
           </div>
         )}
         <select
-          className={`w-full h-[48px] text-[16px] rounded-full border border-border focus:border-theme2-medium focus:outline-theme2-medium pl-3 py-2 pr-8 appearance-none bg-no-repeat bg-[length:20px_20px] bg-[right_10px_center] ${
+          className={`w-full  xs:h-[36px] sm:h-[46px] md:h-[56px] text-[16px] rounded-full border border-border focus:border-theme2-medium focus:outline-theme2-medium pl-3 py-2 pr-8 appearance-none bg-no-repeat bg-[length:20px_20px] bg-[right_10px_center] ${
             icon ? "pl-[40px]" : "pl-3"
           } ${selectClassName}`}
           style={{

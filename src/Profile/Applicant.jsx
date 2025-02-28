@@ -5,21 +5,23 @@ import React from "react";
 const Applicant = () => {
   return (
     <div>
-      <div className="bg-white border p-6 rounded-2xl border-gray-200">
-        <p className="font-bold text-[28px] font-sour">Applicants</p>
-        <div className="border-t border-border w-full my-6" />
-        <div className="grid-cols-2 grid gap-4">
+      <div className="bg-white border xs:p-4 md:p-4 xl:p-6 rounded-2xl border-gray-200">
+        <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-sour">
+          Applicants
+        </p>
+        <div className="border-t border-border w-full my-3" />
+        <div className="grid-cols-1 md:grid-cols-2 grid gap-4">
           <Card4 />
           <Card4 />
           <Card4 />
           <Card4 />
           <Card4 />
         </div>
-        <div className="flex gap-4 justify-end w-full ">
-          <Button className="px-6" variant="primarySmall">
+        <div className="flex flex-wrap gap-2 sm:gap-4 mt-5 justify-end w-full">
+          <Button className="px-4 sm:px-6" variant="primarySmall">
             Save Changes
           </Button>
-          <Button className="px-6" variant="outlineBold2">
+          <Button className="px-4 sm:px-6" variant="outlineBold2">
             Cancel
           </Button>
         </div>

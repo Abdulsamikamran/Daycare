@@ -15,11 +15,11 @@ const PostJob = () => {
     <Layout>
       <div className=" my-7">
         {/* Header Section */}
-        <h1 className="text-[36px] font-sour font-bold mb-4">
+        <h1 className="font-bold text-black-dark xs:text-[24px] lg:text-[36px] font-sour">
           Post Your First Job
         </h1>
 
-        <p className="text-black-medium text-[16] font-medium mb-12">
+        <p className="xs:text-[14px] lg:text-[16px] text-black-medium my-4">
           Let's get started by outlining the role, responsibilities, and unique
           perks your daycare offers. Right candidate for your job is just a post
           away!

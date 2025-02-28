@@ -10,27 +10,29 @@ export default function Button({
 }) {
   const variants = {
     primary:
-      "bg-theme2-dark text-white hover:bg-theme2-medium text-[20px] font-semibold",
+      "bg-theme2-dark text-white min-w-[70px] hover:bg-theme2-medium xs:text-[14px]  lg:text-[20px] whitespace-nowrap font-semibold",
     primarySmall:
-      "bg-theme2-dark text-white hover:bg-theme2-medium text-[16px] font-semibold",
-    red: "bg-red-500 text-white hover:bg-red-300 text-[16px] font-semibold",
+      "bg-theme2-dark text-white min-w-[70px] px-[20px] sm:px-[10px] hover:bg-theme2-medium xs:text-[11px] sm:text-[14px] whitespace-nowrap font-semibold",
+    red: "bg-red-500 text-white min-w-[70px] hover:bg-red-300 xs:text-[11px] sm:text-[14px]  whitespace-nowrap font-semibold",
     primarySmallBlue:
-      "bg-theme1-dark text-white hover:bg-theme2-medium text-[20px] px-[26px] font-semibold",
+      "bg-theme1-dark text-white min-w-[70px] hover:bg-theme2-medium xs:text-[14px]  lg:text-[20px] whitespace-nowrap px-[20px] sm:px-[26px] font-semibold",
     outline:
-      "border border-border bg-white text-black hover:border-theme2-medium text-[16px] font-medium",
+      "border border-border bg-white min-w-[70px] text-black hover:border-theme2-medium xs:text-[12px]  lg:text-[16px] whitespace-nowrap font-medium",
     outlineBold:
-      "border border-border bg-white text-black hover:border-theme2-medium text-[20px] font-semibold",
+      "border border-border bg-white min-w-[70px] text-black hover:border-theme2-medium xs:text-[14px]  lg:text-[20px] whitespace-nowrap font-semibold",
     outlineBold2:
-      "border border-border bg-white text-black hover:border-theme2-medium text-[16px] font-semibold",
+      "border border-border bg-white min-w-[70px] text-black hover:border-theme2-medium xs:text-[14px]  whitespace-nowrap font-semibold",
   };
 
   return (
     <button
-      className={`flex bg-red items-center justify-center gap-2 rounded-full px-4 h-[56px]  
-            focus:outline-none active:border-none active:outline-none
-            ${variants[variant]}
-            ${fullWidth ? "w-full" : ""}
-            ${className} `}
+      className={`flex items-center justify-center gap-2 rounded-full 
+      xs:h-[36px] sm:h-[46px] md:h-[56px]
+                        xs:px-2 md:px-10
+                  focus:outline-none active:border-none active:outline-none
+                  ${variants[variant]}
+                  ${fullWidth ? "w-full" : ""}
+                  ${className}`}
       onClick={onClick}
       type={type}
       {...props}

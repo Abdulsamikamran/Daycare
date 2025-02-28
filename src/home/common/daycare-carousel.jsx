@@ -49,33 +49,27 @@ const daycareData = [
 
 const DaycareCarousel = ({ variant, onClick }) => {
   return (
-    <div className=" overflow-hidden container mx-auto px-4">
+    <div className=" overflow-hidden container mx-auto px-6">
       <div className="flex justify-between  items-center my-4">
-        <h2 className="text-[36px] font-bold font-sour">
+        <h2 className="xs:text-[18px] md:text-[36px] font-bold font-sour">
           {variant === "variant2"
             ? "Featured Daycare Centers "
             : "Nearby Daycare Centers"}
         </h2>
         {variant !== "variant2" && (
-          <a href="#" className="text-theme3-dark text-[18px] hover:underline">
+          <a
+            href="#"
+            className="text-theme3-dark xs:text-[14px] md:text-[18px] hover:underline"
+          >
             Browse all
           </a>
         )}
       </div>
-      <Carousel
-        opts={{
-          align: "start",
-        }}
-        className="w-full"
-      >
-        <CarouselContent className="ml-[10px] flex gap-x-32 mr-[100px]">
-          {daycareData.map((daycare, index) => (
-            <CarouselItem key={index} className=" md:basis-1/2 lg:basis-1/4">
-              <Card2 onClick={onClick} {...daycare} />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
+      <div className=" flex w-full gap-5 hide-scrollbar overflow-y-scroll">
+        {daycareData.map((daycare, index) => (
+          <Card2 onClick={onClick} {...daycare} />
+        ))}
+      </div>
     </div>
   );
 };

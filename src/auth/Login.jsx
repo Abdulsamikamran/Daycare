@@ -13,7 +13,7 @@ export default function Login() {
   return (
     <Layout heading={"Login"}>
       <div className="space-y-8">
-        <p className="text-black-medium">
+        <p className="text-black-medium xs:text-sm lg:text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
@@ -45,13 +45,13 @@ export default function Login() {
     after:content-['✔'] after:absolute after:left-[6px] after:top-[6px] after:text-white after:opacity-0 
     checked:after:opacity-100 checked:after:left-[5px] checked:after:top-[1px]"
               />
-              <span className="text-[16px] mt-1 text-black font-medium">
+              <span className="xs:text-[14px] lg:text-[16px] mt-1 text-black font-medium">
                 Remember me
               </span>
             </label>
             <Link
               to={"/forgot-password"}
-              className="text-[16px] text-theme2-dark"
+              className="xs:text-[14px] lg:text-[16px] text-theme2-dark"
             >
               Forgot password
             </Link>
@@ -64,11 +64,13 @@ export default function Login() {
           <div className="flex items-center">
             <div className="w-full border-t border-gray-200" />
 
-            <p className=" px-2 text-black text-[16px] font-medium">OR</p>
+            <p className=" px-2 text-black xs:text-[14px] lg:text-[16px] font-medium">
+              OR
+            </p>
             <div className="w-full border-t border-gray-200" />
           </div>
 
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid xs:hidden md:grid grid-cols-3 gap-3">
             <Button variant="outline" icon={"/icons/google.svg"}>
               Google
             </Button>
@@ -79,12 +81,17 @@ export default function Login() {
               Facebook
             </Button>
           </div>
+          <div className=" xs:flex md:hidden justify-center gap-3">
+            <Button variant="outline" icon={"/icons/google.svg"}></Button>
+            <Button variant="outline" icon={"/icons/apple.svg"}></Button>
+            <Button variant="outline" icon={"/icons/facebook.svg"}></Button>
+          </div>
 
-          <p className="text-center text-[16px] text-black-medium">
+          <p className="text-center xs:text-[14px] lg:text-[16px] text-black-medium">
             Don't have an account?{" "}
             <Link
               to={"/sign-up"}
-              className="font-medium cursor-pointer pl-1 hover:underline text-[16px] text-theme2-dark"
+              className="font-medium cursor-pointer pl-1 hover:underline xs:text-[14px] lg:text-[16px] text-theme2-dark"
             >
               Create an account
             </Link>

@@ -1,46 +1,38 @@
-import Card3 from "@/components/card3";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/carousel";
-
 const TransformingDaycare = () => {
   return (
-    <div className=" overflow-hidden mb-20 container mx-auto ">
-      <div className="flex justify-between  items-center my-4">
-        <h2 className="text-[36px] font-bold font-sour">Featured Jobs</h2>
-        <a href="#" className="text-theme3-dark text-[18px] hover:underline">
-          Browse all
-        </a>
+    <div className="overflow-hidden mb-20 container mx-auto px-6">
+      <h2 className="xs:text-[18px] md:text-[36px] mb-7 font-bold font-sour">
+        Transforming Daycare Experiences
+      </h2>
+
+      <div className="flex xs:flex-col md:flex-row  w-full gap-5 hide-scrollbar overflow-y-scroll">
+        {[...Array(3)].map((_, index) => (
+          <div
+            key={index}
+            className="flex xs:flex-col md:flex-row min-w-full md:min-w-[700px] lg:min-w-[800px] xl:min-w-[1000px] bg-white p-4 rounded-lg gap-6"
+          >
+            <img
+              src="/assets/card-img2.png"
+              alt=""
+              className="xs:rounded-lg md:rounded-none"
+            />
+            <div className=" space-y-2 text-left">
+              <h3 className="text-lg sm:text-[16px] md:text-2xl font-medium font-sour">
+                Build Stronger Teams
+              </h3>
+              <p className="text-black-medium text-[12px] sm:text-base md:text-lg leading-snug">
+                The foundation of any great daycare experience is a strong,
+                dedicated team. At KinderKrippenJobs, we carefully connect
+                caregivers with centers that share their values and passion for
+                early childhood development. By ensuring a good fit from the
+                start, we help centers build teams who are not only skilled but
+                also genuinely committed to nurturing children’s growth and
+                happiness.
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
-      <Carousel
-        opts={{
-          align: "start",
-        }}
-        className="w-full"
-      >
-        <CarouselContent className="ml-[10px] flex gap-x-[1000px] mr-[1200px] ">
-          {/* Wrap each Card3 in its own CarouselItem */}
-          {[...Array(3)].map((_, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 ] lg:basis-1/1">
-              <div className="flex  w-[1000px] gap-3">
-                <img src="/assets/card-img2.png" alt="" />
-                <div className="p-4 space-y-2">
-                  <h3 className="text-[36px] font-medium font-sour">
-                    Build Stronger Teams
-                  </h3>
-                  <p className="text-black-medium text-[20px]">
-                    The foundation of any great daycare experience is a strong,
-                    dedicated team. At KinderKrippenJobs, we carefully connect
-                    caregivers with centers that share their values and passion
-                    for early childhood development. By ensuring a good fit from
-                    the start, we help centers build teams who are not only
-                    skilled but also genuinely committed to nurturing children’s
-                    growth and happiness.
-                  </p>
-                </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
     </div>
   );
 };

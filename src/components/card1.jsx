@@ -1,6 +1,6 @@
 const Card1 = ({ fileName, fileSize, logoSrc, onDelete }) => {
   return (
-    <div className="flex items-center gap-3 w-full h-[95px] p-3 bg-white rounded-lg shadow">
+    <div className="flex items-center gap-3 w-full h-[95px] p-3 bg-white rounded-lg border border-border">
       <div className="flex items-center justify-center">
         <img src={logoSrc} alt="logo" />
       </div>

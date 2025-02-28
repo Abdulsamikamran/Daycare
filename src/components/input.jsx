@@ -35,18 +35,18 @@ export default function Input({
   return (
     <div className="space-y-2">
       {label && (
-        <label className="block text-[18px] font-semibold text-black-dark">
+        <label className="block xs:text-[14px] sm:text-[16px] md:text-[18px] font-semibold text-black-dark">
           {label}
         </label>
       )}
       <div className="relative">
         {/* Phone Input Variant */}
         {variant === "phone" ? (
-          <div className="flex items-center border border-border rounded-full px-3 h-[48px] bg-white focus-within:ring-2 focus-within:ring-theme2-medium">
+          <div className="flex items-center border border-border rounded-full px-3  xs:h-[36px] sm:h-[46px] md:h-[56px]  bg-white focus-within:ring-2 focus-within:ring-theme2-medium">
             {/* Country Code Dropdown */}
             <button
               type="button"
-              className="flex items-center gap-2  "
+              className="flex items-center gap-2"
               onClick={() => setIsOpen(!isOpen)}
             >
               <img
@@ -54,14 +54,13 @@ export default function Input({
                 alt="flag"
                 className="w-5 h-5 rounded-sm"
               />
-
               <ChevronDown className="h-4 w-4 text-gray-500" />
             </button>
 
             {/* Phone Number Input */}
             <input
               type="tel"
-              className="w-full text-[16px] focus:outline-none pl-1 py-2 bg-transparent"
+              className="w-full xs:text-[12px] sm:text-[16px] focus:outline-none pl-1 py-2 bg-transparent"
               placeholder={placeholder || "576 889 324"}
               value={phoneNumber}
               onChange={(e) =>
@@ -81,8 +80,10 @@ export default function Input({
             <input
               type={inputType}
               placeholder={placeholder}
-              className={`w-full h-[48px] ${className} text-[16px] rounded-full border border-border focus:border-theme2-medium focus:outline-none 
-  ${Icon ? "pl-10" : "pl-3"} ${rightIcon ? "pr-10" : "pr-3"} py-2`}
+              className={`w-full xs:h-[36px] sm:h-[46px] md:h-[56px]  ${className} xs:text-[12px] md:text-[14px] rounded-full border border-border focus:border-theme2-medium focus:outline-none 
+                ${Icon ? "pl-10" : "pl-3"} ${
+                rightIcon ? "pr-10" : "pr-3"
+              } py-2`}
               {...props}
             />
             {rightIcon && (
@@ -98,12 +99,11 @@ export default function Input({
                 className="absolute inset-y-0 right-3 flex items-center text-gray-400"
               >
                 {showPassword ? (
-                  <p className="text-[16px] font-medium text-theme3-dark">
+                  <p className="xs:text-[14px] sm:text-[16px] font-medium text-theme3-dark">
                     hide
                   </p>
                 ) : (
-                  <p className="text-[16px] font-medium text-theme2-dark">
-                    {" "}
+                  <p className="xs:text-[14px] sm:text-[16px] font-medium text-theme2-dark">
                     show
                   </p>
                 )}
@@ -114,7 +114,7 @@ export default function Input({
 
         {/* Country Code Dropdown */}
         {variant === "phone" && isOpen && (
-          <div className="absolute ml-3 -mt-2 z-10  w-10 bg-white border border-border rounded-md shadow-lg">
+          <div className="absolute ml-3 -mt-2 z-10 w-10 bg-white border border-border rounded-lg shadow-lg">
             <ul className="py-1">
               {countryCodes.map((country) => (
                 <li key={country.code}>

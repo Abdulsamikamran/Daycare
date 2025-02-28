@@ -7,9 +7,11 @@ const Language = () => {
   const languages = ["english", "french", "german", "italian"];
 
   return (
-    <div className="bg-white border p-6 rounded-2xl border-gray-200">
-      <p className="font-bold text-[28px] font-sour">Select Language</p>
-      <div className="border-t border-border w-full my-6" />
+    <div className="bg-white border xs:p-4 md:p-4 xl:p-6 rounded-2xl border-gray-200">
+      <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-sour">
+        Select Language
+      </p>
+      <div className="border-t border-border w-full my-3" />
 
       <div className="space-y-4 border border-border rounded-2xl p-4">
         {languages.map((language) => (
@@ -34,7 +36,7 @@ const Language = () => {
           </div>
         ))}
       </div>
-      <div className="border-t border-border w-full my-6" />
+      <div className="border-t border-border w-full my-3" />
       <div className="flex gap-4 mt-5 justify-end w-full ">
         <Button className="px-6" variant="primarySmall">
           Save Changes

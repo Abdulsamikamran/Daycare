@@ -16,18 +16,22 @@ const Jobs = () => {
     <Layout>
       <Hero2 />
       <Filters />
-      <div className="container space-y-6 mx-auto my-20">
-        <h2 className="text-[36px] font-bold font-sour">Featured Jobs</h2>
-        <div className="flex justify-between gap-6 w-full">
+      <div className="container px-6 space-y-6 mx-auto xs:my-10 md:my-20">
+        <h2 className="xs:text-[20px] md:text-[36px] font-bold font-sour">
+          Featured Jobs
+        </h2>{" "}
+        <div className="flex justify-between overflow-x-scroll hide-scrollbar gap-6 w-full">
           <Card3 onClick={handleNavigate} hover />
           <Card3 onClick={handleNavigate} hover />
           <Card3 onClick={handleNavigate} hover />
         </div>
       </div>
       <div className="bg-white w-full py-10">
-        <div className="container space-y-6 mx-auto  ">
-          <h2 className="text-[36px] font-bold font-sour">All Job Listings </h2>
-          <div className="grid grid-cols-3 gap-4 w-full">
+        <div className="container px-6 space-y-6 mx-auto  ">
+          <h2 className="xs:text-[20px] md:text-[36px] font-bold font-sour">
+            All Job Listings{" "}
+          </h2>
+          <div className="grid xs:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full">
             <Card3 hover />
             <Card3 hover />
             <Card3 hover />

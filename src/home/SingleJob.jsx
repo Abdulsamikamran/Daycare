@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Hero3 from "./common/hero3";
 import Layout from "./Layout";
 import VideoCarousel from "./common/video-carousel";
+import ApplyJobModal from "@/components/applyJobModal";
+import Button from "@/components/button";
 
 const responsibilities = [
   "Lead a group of children in daily activities that promote physical, social, emotional, and cognitive development.",
@@ -12,6 +14,7 @@ const responsibilities = [
   "Monitor and document each child’s progress, sharing updates with parents and collaborating with the team on individualized care plans.",
   "Uphold and enforce all safety protocols, ensuring the children’s well-being at all times.",
 ];
+
 const qualifications = [
   "Minimum of 2 years of experience in childcare, early education, or a related field.",
   "Bachelor's degree in Early Childhood Education or a related field (preferred).",
@@ -21,56 +24,109 @@ const qualifications = [
 ];
 
 const SingleJob = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Layout>
-      <Hero3 />
-      <div className=" container mb-20 mx-auto">
-        <h3 className=" font-bold text-[24px]">Benifits:</h3>
-        <div className=" w-full p-6 my-4 bg-white rounded-2xl">
-          <div className=" flex items-center h-full gap-5">
-            <img src="/assets/support-badge.svg" alt="" />
-            <img src="/assets/reward-badge.svg" alt="" />
-            <img src="/assets/flexible-badge.svg" alt="" />
-            <img src="/assets/transport-badge.svg" alt="" />
+    <div className="w-full relative mb-24 md:mb-0">
+      <Layout>
+        <Hero3 />
+        <div className="w-full bg-white">
+          <div className="container px-4 sm:px-6 mb-20 mx-auto">
+            {/* Benefits Section */}
+            <h3 className="font-bold py-4 md:py-0 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+              Benefits:
+            </h3>
+            <div className="w-full  md:p-6 my-4 bg-white rounded-2xl">
+              <div className="flex flex-wrap items-center h-full gap-3 sm:gap-5">
+                <img src="/assets/support-badge.svg" alt="" />
+                <img src="/assets/reward-badge.svg" alt="" />
+                <img src="/assets/flexible-badge.svg" alt="" />
+                <img src="/assets/transport-badge.svg" alt="" />
+              </div>
+            </div>
+
+            {/* Job Description */}
+            <h3 className="font-bold my-4 md:my-0  text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+              Description:
+            </h3>
+            <div className="w-full p-4 md:p-6 my-4 bg-white text-black-medium space-y-3 sm:space-y-4 rounded-2xl">
+              <p className="text-xs sm:text-sm md:text-sm lg:text-lg xl:text-xl">
+                Are you passionate about early childhood education and creating
+                a safe, nurturing environment for young learners? Join our team
+                as a Group Leader and play a pivotal role in shaping the growth
+                and development of children at our daycare center.
+              </p>
+              <p className="text-xs sm:text-sm md:text-sm lg:text-lg xl:text-xl">
+                As a Group Leader, you’ll be responsible for managing a group of
+                children, fostering a positive learning atmosphere, and ensuring
+                the overall well-being of the children under your care. Your
+                role will include overseeing daily activities, mentoring
+                assistant caregivers, and maintaining open communication with
+                parents and staff.
+              </p>
+            </div>
+
+            {/* Responsibilities Section */}
+            <h3 className="font-bold text-lg my-4 md:my-0  sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+              Responsibilities:
+            </h3>
+            <div className="w-full p-4 md:p-6 my-4 text-black-medium bg-white rounded-2xl">
+              <ul className="list-disc pl-4 sm:pl-5 space-y-2">
+                {responsibilities.map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-xs sm:text-sm md:text-sm lg:text-lg xl:text-xl"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Qualifications Section */}
+            <h3 className="font-bold my-4 md:my-0  text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+              Qualifications:
+            </h3>
+            <div className="w-full p-4 md:p-6 my-4 text-black-medium bg-white rounded-2xl">
+              <ul className="list-disc pl-4 sm:pl-5 space-y-2">
+                {qualifications.map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-xs sm:text-sm md:text-sm lg:text-lg xl:text-xl"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Video Section */}
+            <h3 className="font-bold my-4 md:my-0  text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+              Video Presentations:
+            </h3>
+            <VideoCarousel />
           </div>
         </div>
-        <h3 className=" font-bold text-[24px]">Description:</h3>
-        <div className=" w-full p-6 my-4 bg-white text-black-medium text-[20px] space-y-4 rounded-2xl">
-          <p>
-            Are you passionate about early childhood education and creating a
-            safe, nurturing environment for young learners? Join our team as a
-            Group Leader and play a pivotal role in shaping the growth and
-            development of children at our daycare center.
-          </p>
-          <p>
-            {" "}
-            As a Group Leader, you’ll be responsible for managing a group of
-            children, fostering a positive learning atmosphere, and ensuring the
-            overall well-being of the children under your care. Your role will
-            include overseeing daily activities, mentoring assistant caregivers,
-            and maintaining open communication with parents and staff.
-          </p>
+      </Layout>
+
+      <div className=" fixed flex gap-8 w-full py-6 px-4 bottom-0 bg-white">
+        <div className="flex items-center gap-4">
+          <img src="/icons/send.svg" alt="" />
+
+          <img src="/icons/heart.svg" alt="" />
         </div>
-        <h3 className=" font-bold text-[24px]">Responsibilities:</h3>
-        <div className=" w-full p-6 my-4 text-black-medium text-[20px]  bg-white rounded-2xl">
-          <ul className="list-disc pl-5 ">
-            {responsibilities.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <h3 className=" font-bold text-[24px]">Qualifications:</h3>
-        <div className=" w-full p-6 my-4 text-black-medium text-[20px]  bg-white rounded-2xl">
-          <ul className="list-disc pl-5 ">
-            {qualifications.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <h3 className=" font-bold text-[24px]">Video Presentations:</h3>
-        <VideoCarousel />
+
+        <Button
+          fullWidth
+          onClick={() => setIsOpen(true)}
+          variant="primarySmall"
+        >
+          Apply To Job
+        </Button>
+
+        <ApplyJobModal isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-    </Layout>
+    </div>
   );
 };
 

@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/dialog";
 // import { Button } from "@/components/button";

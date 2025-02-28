@@ -13,24 +13,31 @@ export default function ForgotPassword() {
 
   return (
     <Layout heading={"Forgot your password?"}>
-      <div className="space-y-8">
-        <p className="text-black-medium">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+      {/* Parent container */}
+      <div className="xs:flex xs:flex-col xs:min-h-[65dvh] md:min-h-0">
+        {/* Content area */}
+        <div className="xs:flex-grow md:flex-grow-0">
+          <p className="text-black-medium xs:text-sm lg:text-lg">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
 
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          <Input
-            label="Email"
-            type="email"
-            placeholder="example@domain.com"
-            icon={"/icons/email.svg"}
-          />
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <Input
+              label="Email"
+              type="email"
+              placeholder="example@domain.com"
+              icon={"/icons/email.svg"}
+            />
+          </form>
+        </div>
 
-          <Button type="submit" fullWidth>
+        {/* Button container */}
+        <div className="xs:mt-auto xs:pt-6 md:mt-6 md:pt-0">
+          <Button type="submit" fullWidth onClick={handleSubmit}>
             Send Password Reset Link
           </Button>
-        </form>
+        </div>
       </div>
     </Layout>
   );

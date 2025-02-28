@@ -14,12 +14,16 @@ const About = () => {
   return (
     <Layout>
       <Hero2 variant={"variant3"} />
-      <img className="w-full h-[800px] " src="/assets/about-img.png" alt="" />
-      <div className="h-[635px] w-full bg-white">
-        <div className="container mx-auto flex items-center h-full justify-center gap-40">
+      <img
+        className="w-full object-fit h-auto md:h-[800px] "
+        src="/assets/about-img.png"
+        alt=""
+      />
+      <div className="h-auto  md:h-[635px] w-full bg-white">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center h-full justify-center gap-5 md:gap-40">
           <div className="space-y-4">
             <h3 className="font-bold font-sour text-[36px]">
-              Caring, Growing, Triving
+              Caring, Growing, Thriving
             </h3>
             <p className="text-[20px] mb-10 text-black-medium">
               At KinderKrippenJobs, we are passionate about creating meaningful
@@ -39,14 +43,18 @@ const About = () => {
           <img className=" " src="/assets/about-img2.png" alt="" />
         </div>
       </div>
-      <div className="h-[693px] w-full flex justify-center items-center gap-6 flex-col container mx-auto">
+      <div className="h-auto md:h-[693px] my-4 px-6 w-full flex justify-center items-center gap-6 flex-col container mx-auto">
         <h3 className="font-bold font-sour text-[36px]">How we started</h3>
         <p className="text-[20px] mb-10 text-black-medium text-center max-w-[850px]">
           Our journey began with a simple yet profound realization: families
           often struggle to find reliable childcare, while daycare centers face
           challenges in hiring passionate, qualified professionals.
         </p>
-        <img className="w-full h-[390px]" src="/assets/about-img3.png" alt="" />
+        <img
+          className="w-full h-auto  md:h-[390px]"
+          src="/assets/about-img3.png"
+          alt=""
+        />
       </div>
       <WhyJoin />
       <Trusted />

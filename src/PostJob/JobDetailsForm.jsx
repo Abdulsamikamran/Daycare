@@ -1,5 +1,3 @@
-"use client";
-
 import Input from "@/components/input";
 import Select from "@/components/select";
 
@@ -64,7 +62,7 @@ export default function JobDetailsForm({ data, onUpdate }) {
         <label className="block text-[18px] font-semibold text-black-dark">
           Benefits
         </label>
-        <div className=" flex justify-center flex-wrap w-full">
+        <div className=" flex xs:justify-start gap-4 md:justify-center flex-wrap w-full">
           {[
             "Supportive Work Enviornment",
             "Paid Time Off",

@@ -4,43 +4,53 @@ const Hero2 = ({ variant }) => {
   return (
     <div className="overflow-hidden">
       <div className="relative">
+        {/* Responsive Image */}
         <img
-          className="w-full h-[510px] z-10"
+          className="w-full h-[300px] sm:h-[400px] md:h-[510px] object-cover z-10"
           src="/assets/hero-bg1.png"
-          alt=""
+          alt="Hero Background"
         />
-        <div className="absolute top-0 w-full gap-7 h-full pb-20 flex flex-col justify-center items-center text-center">
-          {/* Text container with higher z-index */}
-          <div className="relative z-50">
+
+        {/* Content Container */}
+        <div className="absolute top-0 w-full h-full pb-10 sm:pb-16 md:pb-20 flex flex-col justify-center items-center text-center">
+          {/* Text Container */}
+          <div className="relative z-50 flex flex-col items-center">
             <h3
-              className={`font-semibold font-sour text-[80px] ${
-                variant === "variant2" ? "max-w-[957px]" : "max-w-[644px]"
-              } `}
+              className={`font-semibold font-sour text-[32px]  md:text-[60px] lg:text-[80px] leading-tight ${
+                variant === "variant2"
+                  ? "xs:max-w-[200px]   sm:max-w-[200px] md:max-w-[957px]"
+                  : "sm:max-w-[300px] md:max-w-[644px]"
+              }`}
             >
               {variant === "variant2"
                 ? "Find the Perfect Place for Your Little Ones"
                 : variant === "variant3"
-                ? "We Build Brighter Future Together"
+                ? "We Build Brighter Futures Together"
                 : "Find Your Perfect Daycare Jobs"}
             </h3>
-            {/* Green line positioned absolutely behind the text */}
+
+            {/* Green Line */}
             <img
-              className={`absolute left-1/2 -translate-x-1/2 bottom-[10px] ${
-                variant === "variant2" || variant === "variant3"
-                  ? "w-[600px]"
-                  : "w-[500px]"
-              }  -z-10`}
+              className={`absolute left-1/2 -translate-x-1/2 bottom-[5px] xs:bottom-0 ${
+                variant === "variant2"
+                  ? "w-[190px] md:w-[500px] lg:w-[600px]"
+                  : variant === "variant3"
+                  ? "w-[260px] md:w-[600px] lg:w-[700px]"
+                  : "w-[228px]  md:w-[450px] lg:w-[500px]"
+              } -z-10`}
               src="/assets/hero-greenline.svg"
-              alt=""
+              alt="Green Line"
             />
           </div>
+
+          {/* Description */}
           <p
-            className={`text-[20px] text-center text-black-medium ${
+            className={`text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-black-medium mt-4  px-4  max-w-[542px] ${
               variant === "variant2"
-                ? "max-w-[663px]"
+                ? "md:max-w-[663px]"
                 : variant === "variant3"
-                ? "max-w-[825px]"
-                : "max-w-[542px]"
+                ? "md:max-w-[663px]"
+                : "md:max-w-[542px]"
             }`}
           >
             {variant === "variant2"

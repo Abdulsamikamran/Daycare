@@ -9,14 +9,16 @@ const cards = [
 ];
 const PaymentMethod = () => {
   return (
-    <div className="bg-white border p-6 rounded-2xl border-gray-200">
-      <p className="font-bold text-[28px] font-sour">Change Password</p>
-      <div className="border-t border-border w-full my-6" />
-      <div className=" flex gap-4">
+    <div className="bg-white border xs:p-4 md:p-4 xl:p-6 rounded-2xl border-gray-200">
+      <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-sour">
+        Payment Method
+      </p>
+      <div className="border-t border-border w-full my-3" />
+      <div className=" flex flex-wrap md:flex-nowrap gap-4">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="flex flex-col justify-between min-w-[291px] w-full h-[146px]  p-4 bg-white rounded-lg border border-gray-200"
+            className="flex flex-col justify-between w-full max-w-full h-[146px]  p-4 bg-white rounded-lg border border-gray-200"
           >
             <div className="flex items-center justify-between">
               {/* <span className="text-2xl">{card.logo}</span> */}

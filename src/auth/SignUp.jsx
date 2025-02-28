@@ -3,9 +3,14 @@ import Input from "@/components/input";
 import { Mail, Lock } from "lucide-react";
 
 import Layout from "./Layout";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signup() {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("/role");
+  };
   return (
     <Layout heading={"Create an Account"}>
       <div className="space-y-8">
@@ -66,18 +71,20 @@ export default function Signup() {
             </Link>
           </div>
 
-          <Button fullWidth>Create an account</Button>
+          <Button onClick={handleNavigate} fullWidth>
+            Create an account
+          </Button>
 
           <div className="flex items-center">
             <div className="w-full border-t border-gray-200" />
 
-            <p className=" px-2 text-black whitespace-nowrap text-[16px] font-medium">
+            <p className=" px-2 whitespace-nowrap text-black xs:text-[14px] lg:text-[16px] font-medium">
               OR CONTINUE WITH
             </p>
             <div className="w-full border-t border-gray-200" />
           </div>
 
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid xs:hidden md:grid grid-cols-3 gap-3">
             <Button variant="outline" icon={"/icons/google.svg"}>
               Google
             </Button>
@@ -87,6 +94,11 @@ export default function Signup() {
             <Button variant="outline" icon={"/icons/facebook.svg"}>
               Facebook
             </Button>
+          </div>
+          <div className=" xs:flex md:hidden justify-center gap-3">
+            <Button variant="outline" icon={"/icons/google.svg"}></Button>
+            <Button variant="outline" icon={"/icons/apple.svg"}></Button>
+            <Button variant="outline" icon={"/icons/facebook.svg"}></Button>
           </div>
 
           <p className="text-center text-[16px] text-black-medium">

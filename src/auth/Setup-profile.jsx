@@ -56,12 +56,17 @@ export default function SetupProfile() {
       [section]: data,
     }));
   };
+  const handleBack = () => {
+    setCurrentStep((prev) => Math.max(prev - 1, 1));
+  };
 
   const renderStep = () => {
     switch (currentStep) {
       case 1:
         return (
           <FormStep
+            step={currentStep}
+            onBack={handleBack}
             heading="Setup your profile"
             title="Tell us how you'd like to be addressed."
             description={
@@ -87,6 +92,8 @@ export default function SetupProfile() {
       case 2:
         return (
           <FormStep
+            step={currentStep}
+            onBack={handleBack}
             heading={"Setup your profile"}
             title="Where are you located?"
             description={
@@ -96,7 +103,7 @@ export default function SetupProfile() {
             onSkip={handleSkip}
           >
             <div className="space-y-4">
-              <Input type="text" placeholder="3523" label="Company" />
+              <Input type="text" placeholder="3523" label="Company Name" />
 
               <Select
                 className="space-y-2"
@@ -127,6 +134,8 @@ export default function SetupProfile() {
       case 3:
         return (
           <FormStep
+            step={currentStep}
+            onBack={handleBack}
             heading="Setup your profile"
             title="How can we reach you?"
             description={
@@ -156,6 +165,8 @@ export default function SetupProfile() {
       case 4:
         return (
           <FormStep
+            step={currentStep}
+            onBack={handleBack}
             heading="Setup your profile"
             title="How you'd like to receive updates?"
             description={
@@ -167,10 +178,10 @@ export default function SetupProfile() {
             <div className="space-y-6">
               <div className="flex items-center justify-between bg-white p-2 rounded-md">
                 <div className="space-y-0.5">
-                  <h4 className="text-[20px] font-semibold">
+                  <h4 className="xs:text-[16px] md:text-[20px] font-semibold">
                     New Job Postings
                   </h4>
-                  <p className="text-[16px] text-gray-500">
+                  <p className="xs:text-[14px] md:text-[16px] text-gray-500">
                     Get notified when new daycare jobs are posted in your area.
                   </p>
                 </div>
@@ -189,8 +200,10 @@ export default function SetupProfile() {
 
               <div className="flex items-center justify-between bg-white p-2 rounded-md">
                 <div className="space-y-0.5">
-                  <h4 className="text-[20px] font-semibold">New Feedback</h4>
-                  <p className="text-[16px] text-gray-500">
+                  <h4 className="xs:text-[16px] md:text-[20px] font-semibold">
+                    New Feedback
+                  </h4>
+                  <p className="xs:text-[14px] md:text-[16px] text-gray-500">
                     Get notified when new feedbacks are posted in your jobs.
                   </p>
                 </div>
@@ -209,10 +222,10 @@ export default function SetupProfile() {
 
               <div className="flex items-center justify-between bg-white p-2 rounded-md">
                 <div className="space-y-0.5">
-                  <h4 className="text-[20px] font-semibold">
+                  <h4 className="xs:text-[16px] md:text-[20px] font-semibold">
                     Saved Jobs Expiring
                   </h4>
-                  <p className="text-[16px] text-gray-500">
+                  <p className="xs:text-[14px] md:text-[16px] text-gray-500">
                     Get a reminder when a saved job will be to expire or be
                     removed.
                   </p>
@@ -236,6 +249,8 @@ export default function SetupProfile() {
       case 5:
         return (
           <FormStep
+            step={currentStep}
+            onBack={handleBack}
             heading={"Build Your Company Profile"}
             title="What's your mission and values?"
             description="Add your company details, showcase your facility, and share what makes your daycare a special place to work."
@@ -258,6 +273,8 @@ export default function SetupProfile() {
       case 6:
         return (
           <FormStep
+            step={currentStep}
+            onBack={handleBack}
             heading={"Build Your Company Profile"}
             title="What's your daycare's logo?"
             description="Add your company details, showcase your facility, and share what makes your daycare a special place to work."
@@ -290,6 +307,8 @@ export default function SetupProfile() {
       case 7:
         return (
           <FormStep
+            step={currentStep}
+            onBack={handleBack}
             heading={"Build Your Company Profile"}
             title="What does your daycare look like?"
             description="Add your company details, showcase your facility, and share what makes your daycare a special place to work."
@@ -303,8 +322,8 @@ export default function SetupProfile() {
               onFileSelect={(files) => updateFormData("images", files)}
             />
             <p className="font-bold text-[20px] my-4">Uploaded Files</p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center gap-3 max-w-[277px] h-[95px] p-3 bg-white rounded-lg ">
+            <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-center gap-3 xs:max-w-full md:max-w-[277px] h-[95px] p-3 bg-white rounded-lg ">
                 <div className="">
                   <img src="/assets/upload-img1.svg" alt="logo" />
                 </div>
@@ -318,7 +337,7 @@ export default function SetupProfile() {
                   <img src="/icons/trash.svg" className="ml-1" alt="trash" />
                 </button>
               </div>
-              <div className="flex items-center gap-3 max-w-[277px] h-[95px] p-3 bg-white rounded-lg ">
+              <div className="flex items-center gap-3 xs:max-w-full md:max-w-[277px] h-[95px] p-3 bg-white rounded-lg ">
                 <div className="">
                   {/* <FileImage className="w-5 h-5 text-violet-600" /> */}
                   <img src="/assets/upload-img2.svg" alt="logo" />
@@ -334,7 +353,7 @@ export default function SetupProfile() {
                   {/* <Trash2 className="h-4 w-4" /> */}
                 </button>
               </div>
-              <div className="flex items-center gap-3 max-w-[277px] h-[95px] p-3 bg-white rounded-lg ">
+              <div className="flex items-center gap-3 xs:max-w-full md:max-w-[277px] h-[95px] p-3 bg-white rounded-lg ">
                 <div className="">
                   {/* <FileImage className="w-5 h-5 text-violet-600" /> */}
                   <img src="/assets/upload-img3.svg" alt="logo" />
@@ -357,6 +376,8 @@ export default function SetupProfile() {
       case 8:
         return (
           <FormStep
+            step={currentStep}
+            onBack={handleBack}
             heading={"Build Your Company Profile"}
             title="What's a glimpse inside your daycare?"
             description="Add your company details, showcase your facility, and share what makes your daycare a special place to work."
@@ -396,6 +417,17 @@ export default function SetupProfile() {
   return (
     <Layout start>
       <ProgressBar currentStep={currentStep} totalSteps={TOTAL_STEPS} />
+      <div
+        className={`flex justify-center xs:items-start md:items-center md:hidden xs:block" 
+        }`}
+      >
+        <img
+          src="/assets/logoLarge.svg"
+          alt="Kinderkrippenjobs Logo"
+          className="xs:max-w-[214.89px] xs:mb-4  "
+        />
+      </div>
+
       {renderStep()}
     </Layout>
   );

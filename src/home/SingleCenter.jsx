@@ -26,16 +26,16 @@ const SingleCenter = () => {
   return (
     <Layout>
       <Hero3 variant={"variant2"} />
-      <div className=" container mb-20 mx-auto ">
+      <div className=" container pt-3 bg-white md:bg-transparent px-6 mb-4 md:mb-20 mx-auto ">
         <h3 className=" font-bold text-[24px]">Description:</h3>
-        <div className=" w-full p-6 my-4 bg-white text-black-medium text-[20px] space-y-4 rounded-2xl">
-          <p>
+        <div className=" w-full p-2 md:p-6 my-2 pb-4 md:pb-0 md:my-4 bg-white text-black-medium text-[20px] space-y-4 rounded-2xl">
+          <p className="text-gray-600 text-[14px] sm:text-[16px] mb-3 sm:mb-4">
             Are you passionate about early childhood education and creating a
             safe, nurturing environment for young learners? Join our team as a
             Group Leader and play a pivotal role in shaping the growth and
             development of children at our daycare center.
           </p>
-          <p>
+          <p className="text-gray-600 text-[14px] sm:text-[16px] mb-3 sm:mb-4">
             {" "}
             As a Group Leader, you’ll be responsible for managing a group of
             children, fostering a positive learning atmosphere, and ensuring the
@@ -45,7 +45,7 @@ const SingleCenter = () => {
           </p>
         </div>
       </div>
-      <div className=" container mb-20 mx-auto flex gap-8">
+      <div className=" container px-6 mb-20 mx-auto flex gap-8">
         <div className="space-y-6">
           <h3 className=" font-bold text-[24px]">Available Jobs:</h3>
           <Card3 hover />
@@ -53,7 +53,7 @@ const SingleCenter = () => {
           <Card3 hover />
         </div>
 
-        <div>
+        <div className=" hidden md:block">
           <div className=" w-full p-6 my-4 bg-white text-black-medium text-[20px] space-y-4 rounded-2xl">
             <div className="relative">
               <img src="/assets/job-hero.png" alt="" />
@@ -73,6 +73,22 @@ const SingleCenter = () => {
                 </div>
 
                 <Button variant="primarySmall">Apply To Job</Button>
+              </div>
+            </div>
+            <div className="flex gap-4 items-center">
+              <div className="flex gap-2  px-2 py-2 items-center">
+                <img src="/icons/leader.svg" alt="" />
+                <p className="font-medium text-[18px]">Group Leader</p>
+              </div>
+              <div className="flex gap-3  px-2 py-2 items-center">
+                <img src="/icons/time-orange.svg" alt="" />
+                <span className="font-medium text-[18px]">Full Time</span>
+              </div>
+              <div className="flex gap-3  px-2 py-2 items-center">
+                <img src="/icons/location-orange.svg" alt="" />
+                <span className="font-medium text-[18px]">
+                  Radius Gallery · Santa Cruz, CA
+                </span>
               </div>
             </div>
           </div>

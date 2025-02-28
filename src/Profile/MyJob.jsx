@@ -3,6 +3,7 @@ import Card3 from "@/components/card3";
 import Input from "@/components/input";
 import Select from "@/components/select";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const socialPlatforms = [
   { id: "facebook", name: "Facebook", icon: "/icons/facebook-sm.svg" },
@@ -15,6 +16,7 @@ const socialPlatforms = [
 ];
 
 const MyJobs = () => {
+  const navigate = useNavigate();
   const [editClick, setEditClick] = useState(false);
   const [saveClick, setSaveClick] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -28,19 +30,24 @@ const MyJobs = () => {
   };
 
   const handleSave = () => {
+    navigate("/profile");
     setSaveClick(true);
-    setEditClick(false);
+    setEditClick(true);
   };
 
   return (
-    <div className="bg-white border p-6 rounded-2xl border-gray-200">
+    <div className="bg-white border xs:p-4 md:p-4 xl:p-6 rounded-2xl border-gray-200">
       {saveClick ? (
         <div className="space-y-8">
-          <p className="font-bold text-[28px] font-sour">Share & Publishing</p>
+          <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-sour">
+            Share & Publishing
+          </p>
           <div className="border-t border-border w-full my-6" />
 
           <div className="flex items-center justify-between">
-            <h3 className="font-semibold text-[18px]">Social Sharing</h3>
+            <h3 className="font-semibold text-xs sm:text-sm md:text-sm lg:text-lg xl:text-xl">
+              Social Sharing
+            </h3>
             <button
               onClick={togglePlatform}
               className={`w-12 h-6 rounded-full transition-colors duration-200 ease-in-out ${
@@ -54,7 +61,7 @@ const MyJobs = () => {
               />
             </button>
           </div>
-          <div className=" bg-white rounded-lg p-2">
+          <div className="bg-white rounded-lg p-2">
             {socialPlatforms.map((platform) => (
               <div
                 key={platform.id}
@@ -62,8 +69,7 @@ const MyJobs = () => {
               >
                 <div className="flex items-center gap-3">
                   <img src={platform.icon} alt="" />
-
-                  <span className="font-semibold text-[18px]">
+                  <span className="font-semibold text-xs sm:text-sm md:text-sm lg:text-lg xl:text-xl">
                     {platform.name}
                   </span>
                 </div>
@@ -88,7 +94,9 @@ checked:after:opacity-100 checked:after:left-[5px] checked:after:top-[1px]"
         <div>
           <div className="flex items-center gap-2">
             <img onClick={handleBack} src="/icons/back.svg" alt="Back" />
-            <p className="font-bold text-[28px] font-sour">Edit Job</p>
+            <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-sour">
+              Edit Job
+            </p>
           </div>
           <div className="border-t border-border w-full my-6" />
           <div className="space-y-6">
@@ -107,7 +115,7 @@ checked:after:opacity-100 checked:after:left-[5px] checked:after:top-[1px]"
             />
 
             <div>
-              <label className="block text-[18px] font-semibold text-black-dark">
+              <label className="block text-xs sm:text-sm md:text-sm lg:text-lg xl:text-xl font-semibold text-black-dark">
                 Job Description
               </label>
               <textarea
@@ -115,63 +123,6 @@ checked:after:opacity-100 checked:after:left-[5px] checked:after:top-[1px]"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#9CD323] focus:border-[#9CD323]"
                 placeholder="Enter job description..."
               />
-            </div>
-            <div>
-              <label className="block text-[18px] font-semibold text-black-dark">
-                Responsibilities
-              </label>
-              <textarea
-                // value={data.responsibilities}
-                // onChange={(e) => onUpdate({ responsibilities: e.target.value })}
-                rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#9CD323] focus:border-[#9CD323]"
-                placeholder="Enter responsibilities..."
-              />
-            </div>
-
-            <div>
-              <label className="block text-[18px] font-semibold text-black-dark">
-                Qualifications
-              </label>
-              <textarea
-                // value={data.qualifications}
-                // onChange={(e) => onUpdate({ qualifications: e.target.value })}
-                rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#9CD323] focus:border-[#9CD323]"
-                placeholder="Enter qualifications..."
-              />
-            </div>
-
-            <div>
-              <label className="block text-[18px] font-semibold text-black-dark">
-                Benefits
-              </label>
-              <div className="flex justify-start gap-6 items-center flex-wrap w-full">
-                {[
-                  "Supportive Work Enviornment",
-                  "Paid Time Off",
-                  "Transportation",
-                  "Birthday Celebration",
-                  "Flexable Work Hours",
-                  "Rewards",
-                ].map((benefit) => (
-                  <div
-                    key={benefit}
-                    className="h-[53px] border-border border-[1px]  flex gap-6 items-center rounded-full bg-white px-4 "
-                  >
-                    <p className="text-[16px] text-black-medium"> {benefit}</p>
-                    <input
-                      type="checkbox"
-                      className="peer relative appearance-none shrink-0 w-6 h-6 border-2 border-border rounded-md mt-1 bg-white
-    focus:outline-none focus:ring-offset-0 focus:ring-1 focus:ring-border
-    checked:bg-theme2-dark checked:border-0
-    disabled:border-steel-400 disabled:bg-steel-400
-    after:content-['✔'] after:absolute after:left-[6px] after:top-[6px] after:text-white after:opacity-0 
-    checked:after:opacity-100 checked:after:left-[5px] checked:after:top-[1px]"
-                    />
-                  </div>
-                ))}
-              </div>
             </div>
 
             <Button onClick={handleSave} fullWidth>
@@ -181,30 +132,46 @@ checked:after:opacity-100 checked:after:left-[5px] checked:after:top-[1px]"
         </div>
       ) : (
         <div>
-          <p className="font-bold text-[28px] font-sour">My Jobs</p>
+          <p className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-sour">
+            My Jobs
+          </p>
           <div className="border-t border-border w-full my-6" />
-          <div className="flex justify-evenly items-end gap-4">
-            <Input
-              label="Job Title"
-              placeholder="Experienced Teacher"
-              icon="/icons/search-green.svg"
-              className="flex-1 w-[376px]"
-            />
-            <Select
-              className="flex-1"
-              label="Location"
-              icon="/icons/location-green.svg"
-              options={[{ value: "Phuket", label: "Phuket" }]}
-            />
-            <Select
-              className="flex-1"
-              label="Category"
-              icon="/icons/search-green.svg"
-              options={[{ value: "Assistant", label: "Assistant" }]}
-            />
-            <Button variant="primarySmall" className="whitespace-nowrap px-16">
-              Search
-            </Button>
+          <div className=" flex-col flex lg:flex-row justify-evenly items-start md:items-end gap-4">
+            <div className=" flex-1 w-full">
+              <Input
+                label="Job Title"
+                placeholder="Experienced Teacher"
+                icon="/icons/search-green.svg"
+                className="flex-1 w-[500px]"
+              />
+            </div>
+
+            <div className=" flex-1 w-full">
+              <Select
+                className="flex-1"
+                label="Location"
+                icon="/icons/location-green.svg"
+                options={[{ value: "Phuket", label: "Phuket" }]}
+              />
+            </div>
+            <div className=" flex-1 w-full">
+              <Select
+                className="flex-1"
+                label="Category"
+                icon="/icons/search-green.svg"
+                options={[{ value: "Infants", label: "Infants" }]}
+              />
+            </div>
+
+            <div className=" flex-1 w-full">
+              <Button
+                fullWidth
+                variant="primarySmall"
+                className="whitespace-nowrap px-16"
+              >
+                Search
+              </Button>
+            </div>
           </div>
           <div className="space-y-4 mt-4">
             <Card3 button setEditClick={setEditClick} />

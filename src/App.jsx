@@ -33,7 +33,7 @@ function App() {
         <Route path="/jobs/job" element={<SingleJob />} />
         <Route path="/centers" element={<Centers />} />
         <Route path="/centers/center" element={<SingleCenter />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about-us" element={<About />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>

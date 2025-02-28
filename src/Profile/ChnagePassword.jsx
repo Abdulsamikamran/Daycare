@@ -11,7 +11,7 @@ const ChangePassword = () => {
   return (
     <div className="bg-white border p-6 rounded-2xl border-gray-200">
       <p className="font-bold text-[28px] font-sour">Change Password</p>
-      <div className="border-t border-border w-full my-6" />
+      <div className="border-t border-border w-full my-3" />
       <div className="space-y-6">
         <Input
           label="Old Password"

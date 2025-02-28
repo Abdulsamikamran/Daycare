@@ -1,16 +1,8 @@
-"use client";
-
 import Button from "@/components/button";
 import Input from "@/components/input";
 import Select from "@/components/select";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { Button } from "@/components/button";
-// import { Input } from "@/components/input";
-// import { Label } from "@/components/ui/label"
-// import { Checkbox } from "@/components/ui/checkbox"
-// import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function PaymentForm() {
   const navigate = useNavigate();

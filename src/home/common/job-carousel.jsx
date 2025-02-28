@@ -3,28 +3,24 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/carousel";
 
 const JobCarousel = () => {
   return (
-    <div className=" overflow-hidden mb-6 container mx-auto ">
+    <div className=" overflow-hidden mb-6 container mx-auto xs:px-4 md:px-6">
       <div className="flex justify-between  items-center my-4">
-        <h2 className="text-[36px] font-bold font-sour">Featured Jobs</h2>
-        <a href="#" className="text-theme3-dark text-[18px] hover:underline">
+        <h2 className="xs:text-[18px] md:text-[36px] font-bold font-sour">
+          Featured Jobs
+        </h2>
+        <a
+          href="#"
+          className="text-theme3-dark xs:text-[14px] md:text-[18px] hover:underline"
+        >
           Browse all
         </a>
       </div>
-      <Carousel
-        opts={{
-          align: "start",
-        }}
-        className="w-full"
-      >
-        <CarouselContent className="ml-[10px] flex gap-x-40 mr-[180px]">
-          {/* Wrap each Card3 in its own CarouselItem */}
-          {[...Array(5)].map((_, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
-              <Card3 />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
+
+      <div className=" flex gap-5 hide-scrollbar overflow-y-scroll">
+        {[...Array(5)].map((_, index) => (
+          <Card3 />
+        ))}
+      </div>
     </div>
   );
 };

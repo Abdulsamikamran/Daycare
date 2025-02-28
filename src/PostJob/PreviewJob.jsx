@@ -1,5 +1,3 @@
-"use client";
-
 import Card1 from "@/components/card1";
 
 const jobDetails = [
@@ -106,7 +104,7 @@ export default function PreviewJob() {
       <IconGrid title="Benefits" icons={benefitIcons} />
 
       <h1 className="font-bold text-[18px]">Video Presentations</h1>
-      <div className="flex gap-2">
+      <div className="flex xs:flex-col md:flex-row gap-2">
         {videoPresentations.map((video, index) => (
           <Card1
             key={index}
@@ -117,7 +115,7 @@ export default function PreviewJob() {
       </div>
 
       <h1 className="font-bold text-[18px]">Social Sharing</h1>
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid  xs:grid-cols-1 md:grid-cols-2 gap-2">
         {socialPlatforms.map((platform, index) => (
           <Card1
             key={index}
